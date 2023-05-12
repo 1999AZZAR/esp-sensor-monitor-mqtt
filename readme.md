@@ -7,34 +7,31 @@ This code is an example of sensor data monitoring using an Arduino board. It rea
 ## Requirements
 To run this code, you will need the following components:
 
-	- Arduino board (tested on Arduino Uno)
-	- DHT11 temperature and humidity sensor
-	- Fire sensor (analog input)
-	- Gas sensor (analog input)
-	- Buzzer (digital output)
-	- Connections
-		Make the following connections between the components and the Arduino board:
+- Arduino board (tested on Arduino Uno)
+- DHT11 temperature and humidity sensor
+- Fire sensor (analog input)
+- Gas sensor (analog input)
+- Buzzer (digital output)
+- Connections
+- Make the following connections between the components and the Arduino board:
 
-		- Connect the DHT11 sensor to digital pin 3 of the Arduino board.
-		- Connect the fire sensor to analog pin A2 of the Arduino board.
-		- Connect the gas sensor to analog pin A3 of the Arduino board.
-		- Connect the buzzer to digital pin 9 of the Arduino board.
+	- Connect the DHT11 sensor to digital pin 3 of the Arduino board.
+	- Connect the fire sensor to analog pin A2 of the Arduino board.
+	- Connect the gas sensor to analog pin A3 of the Arduino board.
+	- Connect the buzzer to digital pin 9 of the Arduino board.
 ## Usage
 Follow these steps to use the code:
 
 1. Install the required libraries:
 
-- dht.h (for DHT11 sensor)
-- ESP8266WiFi (for Wi-Fi connectivity)
-- SoftwareSerial (for communication with the ESP8266 module)
-- Adafruit_MQTT (for MQTT functionality)
-- Adafruit_MQTT_Client (for MQTT client implementation)
+	- dht.h (for DHT11 sensor)
+	- ESP8266WiFi (for Wi-Fi connectivity)
+	- SoftwareSerial (for communication with the ESP8266 module)
+	- Adafruit_MQTT (for MQTT functionality)
+	- Adafruit_MQTT_Client (for MQTT client implementation)
 2. Upload the code to the Arduino board using the Arduino IDE or other compatible software.
-
 3. Open the serial monitor to view the sensor readings, fuzzy logic calculations, and MQTT connection status. Make sure the baud rate is set to 115200.
-
 4. The code will continuously read sensor data, perform calculations, and publish the data to Adafruit IO MQTT. The serial monitor will display the sensor readings, fuzzy logic calculations, and MQTT connection status.
-
 5. Monitor the Adafruit IO dashboard to view the sensor data and track changes in real-time. The published data will be displayed in the corresponding feeds on your Adafruit IO account.
 
 ## Explanation
@@ -47,18 +44,31 @@ Here is a breakdown of the code's functionality:
 3. The `loop()` function is the main program loop that runs continuously. Within this loop, the code performs the following steps:
 
 	a. Reads temperature and humidity from the DHT11 sensor using the DHT.read11() function.
+	
 	b. Checks if the DHT11 reading was successful using the DHTLIB_OK constant.
+	
 	c. If the reading was successful, it retrieves the temperature value from the DHT11 sensor.
+	
 	d. The code maintains an array of temperature readings to calculate the average temperature. It updates the array, calculates the average, and applies an offset to adjust the temperature reading.
+	
 	e. It reads the analog values from the fire and gas sensors and converts them to relevant units using the specified constants.
+	
 	f. Fuzzy logic calculations are performed for the temperature, fire, and gas levels to determine the degree of cold, warm, hot, none, small, large, noGas, lightGas, and heavyGas.
+	
 	g. The fuzzy logic rules are applied to determine the output levels of safety, warning, and danger.
+	
 	h. The output levels are adjusted to ensure their sum is equal to 1.
+	
 	i. The sensor readings, fuzzy logic calculations, and output levels are printed to the serial monitor for debugging and monitoring purposes.
+	
 	j. The buzzer is turned on if the danger level exceeds a certain threshold; otherwise, it is turned off.
+	
 	k. The code establishes an MQTT connection with Adafruit IO using the Wi-Fi module and the provided Adafruit IO username and key.
+	
 	l. Once the MQTT connection is established, the code publishes the sensor data to the corresponding MQTT topics on Adafruit IO. The topics are defined in the code and can be customized to match your Adafruit IO feeds.
+	
 	m. The code continuously checks for incoming MQTT messages, although no specific functionality related to message reception is implemented in this code. This section can be customized to handle incoming messages if required.
+	
 	n. A short delay is added before reading inputs again to avoid rapid fluctuations in readings.
 
 The code repeats the steps in the `loop()` function indefinitely, continuously monitoring the sensor data, performing fuzzy logic calculations, and publishing the data to Adafruit IO MQTT.
