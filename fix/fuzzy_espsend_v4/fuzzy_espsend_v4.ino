@@ -14,8 +14,8 @@ const char* password = "drowssap";
 // Adafruit IO settings
 #define AIO_SERVER "io.adafruit.com"
 #define AIO_SERVERPORT 1883
-#define AIO_USERNAME "Azzar"
-#define AIO_KEY "aio_KOFL94bhBCxIZxCq99t3EWANy1HC"
+#define AIO_USERNAME "YOUR_AIO_USERNAME"
+#define AIO_KEY "YOUR_AIO_KEY"
 
 WiFiClient client;
 Adafruit_MQTT_Client mqtt(&client, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO_USERNAME, AIO_KEY);
