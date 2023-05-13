@@ -19,6 +19,15 @@ Untuk menjalankan kode ini, Anda akan membutuhkan komponen-komponen berikut:
 	- Hubungkan sensor kebakaran ke pin analog A2 pada papan Arduino.
 	- Hubungkan sensor gas ke pin analog A3 pada papan Arduino.
 	- Hubungkan buzzer ke pin digital 9 pada papan Arduino.
+	
+| arduino | Sensor |
+|---------|--------|
+| A2      | fire   |
+| A3      | gas    |
+| D8      | DHT 11 |
+| D9	  | Buzzer |
+| TX      | ESP D2 |
+| RX      | ESP D3 |
 
 ## Penggunaan
 Ikuti langkah-langkah berikut untuk menggunakan kode ini:
