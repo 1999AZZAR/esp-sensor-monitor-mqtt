@@ -19,6 +19,16 @@ To run this code, you will need the following components:
 	- Connect the fire sensor to analog pin A2 of the Arduino board.
 	- Connect the gas sensor to analog pin A3 of the Arduino board.
 	- Connect the buzzer to digital pin 9 of the Arduino board.
+	
+| arduino | Sensor |
+|---------|--------|
+| A2      | fire   |
+| A3      | gas    |
+| D8      | DHT 11 |
+| D9	  | Buzzer |
+| TX      | ESP D2 |
+| RX      | ESP D3 |
+
 ## Usage
 Follow these steps to use the code:
 
