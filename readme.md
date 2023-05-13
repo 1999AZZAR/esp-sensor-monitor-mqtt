@@ -15,7 +15,7 @@ To run this code, you will need the following components:
 - Connections
 - Make the following connections between the components and the Arduino board:
 
-	- Connect the DHT11 sensor to digital pin 3 of the Arduino board.
+	- Connect the DHT11 sensor to digital pin 8 of the Arduino board.
 	- Connect the fire sensor to analog pin A2 of the Arduino board.
 	- Connect the gas sensor to analog pin A3 of the Arduino board.
 	- Connect the buzzer to digital pin 9 of the Arduino board.
