@@ -15,7 +15,7 @@ Untuk menjalankan kode ini, Anda akan membutuhkan komponen-komponen berikut:
 - Koneksi
 - Buat koneksi-koneksi berikut antara komponen-komponen dan papan Arduino:
 
-	- Hubungkan sensor DHT11 ke pin digital 3 pada papan Arduino.
+	- Hubungkan sensor DHT11 ke pin digital 8 pada papan Arduino.
 	- Hubungkan sensor kebakaran ke pin analog A2 pada papan Arduino.
 	- Hubungkan sensor gas ke pin analog A3 pada papan Arduino.
 	- Hubungkan buzzer ke pin digital 9 pada papan Arduino.
