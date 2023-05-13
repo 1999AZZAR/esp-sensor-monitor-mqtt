@@ -41,6 +41,9 @@ Ikuti langkah-langkah berikut untuk menggunakan kode ini:
 	- Adafruit_MQTT_Client (untuk implementasi klien MQTT)
 
 2. Unggah kode ke papan Arduino menggunakan Arduino IDE atau perangkat lunak yang kompatibel lainnya.
+	
+	- fuzzy_arduino untuk papan arduino.
+	- fuzzy_espsend untuk papan esp8266/esp23
 
 3. Buka serial monitor untuk melihat pembacaan sensor, perhitungan logika kabur, dan status koneksi MQTT. Pastikan baud rate diatur menjadi 115200.
 
