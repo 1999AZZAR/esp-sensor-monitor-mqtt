@@ -1,5 +1,39 @@
 # explanation 
 
+```#include <dht.h>
+#include <ArduinoJson.h>
+
+unsigned long previousMillis = 0;
+unsigned long interval = 5000;  // 5 seconds
+
+// Define input pins
+const int firePin = A2;
+const int gasPin = A3;
+const int buzzerPin = 9;
+
+int offset = 2;
+
+const float adcMin = 0.0;
+const float adcMax = 1023.0;
+
+// Variables for averaging temperature readings
+const int numReadings = 5; // Number of readings to average
+int tempReadings[numReadings]; // Array to store temperature readings
+int tempIndex = 0; // Index of the current reading
+int tempTotal = 0; // Accumulator for summing the readings
+
+// Create an instance of the dht class
+dht DHT;
+```
+
+- `#include <dht.h>` and `#include <ArduinoJson.h>`: These are preprocessor directives that include the necessary libraries for the code to work properly. The dht library provides functions to interact with the DHT temperature and humidity sensor, while the ArduinoJson library enables working with JSON data.
+- `unsigned long previousMillis = 0;` and `unsigned long interval = 5000;`: These variables are used for timing purposes. previousMillis stores the previous timestamp when an action was performed, and interval defines the desired time interval (in milliseconds) between actions. In this case, the interval is set to 5000 milliseconds (5 seconds).
+- `const int firePin = A2;`, `const int gasPin = A3;`, and `const int buzzerPin = 9;`: These constants represent the Arduino pins to which various components are connected. firePin is connected to the fire sensor, gasPin is connected to the gas sensor, and buzzerPin is connected to the buzzer.
+- `int offset = 2;`: This variable represents an offset value, which is typically used for calibrating sensor readings. It can be adjusted according to the specific requirements of the project.
+- `const float adcMin = 0.0;` and `const float adcMax = 1023.0;`: These constants define the minimum and maximum values of the analog-to-digital converter (ADC) range. The Arduino board has a 10-bit ADC, which means it can provide digital values ranging from 0 to 1023.
+- `const int numReadings = 5;`, `int tempReadings[numReadings];`, `int tempIndex = 0;`, and `int tempTotal = 0;`: These variables and arrays are used for averaging temperature readings. numReadings specifies the number of readings to average, tempReadings is an array that stores the temperature readings, tempIndex keeps track of the current reading index, and tempTotal accumulates the sum of the readings.
+- `dht DHT;`: This line creates an instance of the dht class, which is used to interact with the DHT sensor and retrieve temperature and humidity readings.
+
 ```
 void setup()
 {
