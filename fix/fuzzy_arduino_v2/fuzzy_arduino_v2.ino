@@ -105,12 +105,12 @@ void loop()
     DynamicJsonDocument jsonDoc(256);
 
     // Populate the JSON document
-    jsonDoc["t"] = calibratedTemp;
-    jsonDoc["f"] = fire;
-    jsonDoc["g"] = ppm;
-    jsonDoc["s"] = safe;
-    jsonDoc["w"] = warning;
-    jsonDoc["d"] = danger;
+    jsonDoc["t"] = String(calibratedTemp, 2);
+    jsonDoc["f"] = String(fire, 2);
+    jsonDoc["g"] = String(ppm, 2);
+    jsonDoc["s"] = String(safe, 2);
+    jsonDoc["w"] = String(warning, 2);
+    jsonDoc["d"] = String(danger, 2);
 
     // Serialize the JSON document to a string
     String jsonString;
