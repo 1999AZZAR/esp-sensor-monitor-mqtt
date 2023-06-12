@@ -196,3 +196,35 @@ void printSensorData(const char* sensorName, float value) {
 - The code defines the `printSensorData()` function that prints the sensor name and its corresponding value over the Serial communication.
 - It takes a const char* sensorName and a float value as parameters.
 - It prints the sensor name, followed by a colon and space, and then prints the value on a new line using `Serial.println()`.
+
+## flowchart 
+
+```mermaid
+graph LR
+A[Start] --> B[Setup]
+B --> C[Loop]
+C --> D{Check if data is available}
+D -- Yes --> E[Read JSON data from Arduino]
+E --> F[Deserialize JSON data]
+F --> G[Publish temperature value]
+F --> H[Publish fire value]
+F --> I[Publish gas value]
+F --> J[Publish outputSafe value]
+F --> K[Publish outputWarning value]
+F --> L[Publish outputDanger value]
+F --> M[Print temperature value]
+M --> N[Print fire value]
+N --> O[Print gas value]
+O --> P[Print outputSafe value]
+P --> Q[Print outputWarning value]
+Q --> R[Print outputDanger value]
+C -- No --> S[Handle MQTT communication]
+S --> T[Ping MQTT]
+T --> C
+C --> U[End]
+
+subgraph Setup
+  B --> V[Connect to Wi-Fi]
+  V --> W[Connect to Adafruit IO MQTT]
+end
+```
