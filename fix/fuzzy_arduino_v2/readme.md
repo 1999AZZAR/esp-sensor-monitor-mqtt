@@ -148,3 +148,44 @@ delay(100);
 
 - The code introduces a delay of 100 milliseconds before starting the next iteration of the loop() function.
 - This delay helps in controlling the frequency of sensor readings and reduces the processing load on the microcontroller.
+
+## flowchart 
+
+```mermaid
+graph LR
+A[Start] --> B[Setup]
+B --> C[Loop]
+C --> D{Check if interval has elapsed}
+D -- Yes --> E[Read temperature and humidity from DHT11]
+E --> F[Update temperature readings]
+F --> G[Calculate average temperature]
+G --> H[Apply temperature offset]
+E --> I[Read fire sensor values]
+I --> J[Convert analog value to voltage]
+J --> K[Apply offset to adjust fire reading]
+K --> L[Map fire reading]
+E --> M[Read gas sensor values]
+M --> N[Convert analog value to voltage]
+N --> O[Apply offset to adjust ppm reading]
+C --> P[Fuzzy logic calculation for temperature]
+P --> Q[Fuzzy logic calculation for fire]
+Q --> R[Fuzzy logic calculation for gas]
+R --> S[Fuzzy logic rules for output]
+S --> T[Calculate sum of safe, warning, and danger]
+T --> U[Adjust values to ensure sum is equal to 1]
+D -- No --> C
+C --> V{Check danger level}
+V -- Danger > 0.55 --> W[Play 1kHz tone]
+V -- Danger <= 0.55 --> X[Stop playing tone]
+X --> C
+D -- Yes --> Y[Create JSON document]
+Y --> Z[Populate JSON document]
+Z --> AA[Serialize JSON document to string]
+AA --> AB[Send JSON data over serial]
+AB --> C
+C --> AC[Delay]
+AC --> D
+D -- Yes --> AD[End]
+AD --> AE[Stop]
+```
+
