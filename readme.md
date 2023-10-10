@@ -132,3 +132,13 @@ Here are a few common issues you may encounter and possible solutions:
 By combining the functionalities of the two readme files, you now have a comprehensive guide for sensor data monitoring using an Arduino board and publishing the data to Adafruit IO MQTT. The code enables you to read sensor values, perform calculations, and determine safety levels based on fuzzy logic. Additionally, it establishes a connection with Adafruit IO MQTT to publish the sensor data for remote monitoring and analysis.
 
 Feel free to modify and adapt the code to suit your specific needs and hardware setup. Happy coding!
+
+### Support
+
+You can support me by buy me a coffee if u like to.
+<div align="left">
+<!--   <h4>And you can also support me by <a href="https://www.buymeacoffee.com/azzar" target="_blank">buying me coffee</a></h4> -->
+  <a href="https://www.buymeacoffee.com/azzar" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 42px !important;width: 151.9px !important; margin-top: 50px !important;">
+  </a>
+</div>
